@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 public class NoteHelper {
-    private static final String DATABASE_TABLE = DatabaseContract.TABLE_NAME;
+    private static final String DATABASE_TABLE = DatabaseContract.NoteColumns.TABLE_NAME;
     private static DatabaseHelper dataBaseHelper;
     private static NoteHelper INSTANCE;
 
@@ -72,4 +72,6 @@ public class NoteHelper {
     public int deleteById(String id) {
         return database.delete(DATABASE_TABLE, DatabaseContract.NoteColumns._ID + " = ?", new String[]{id});
     }
+
+
 }
